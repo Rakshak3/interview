@@ -32,6 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['.vercel.app','.now.sh']
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api',
-    'corsheaders',
+    # 'corsheaders',
     'rest_framework',
     'knox',
 ]
@@ -142,7 +143,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, 'static_cdn'),
     os.path.join(BASE_DIR, 'build','static'),
 ]
 
@@ -160,6 +160,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
         ]
 }
-
-STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
+import os
+# STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')

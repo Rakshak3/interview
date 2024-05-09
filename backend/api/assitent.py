@@ -6,7 +6,7 @@ import win32com.client
 import openai
 import pyttsx3
 
-apikey = "sk-proj-aRdiAbfCkXnSg9lxzRZAT3BlbkFJKxPcFnZw7KpFZjkMpMWB"
+apikey = ""
 openai.api_key = apikey
 sp = win32com.client.Dispatch("SAPI.SpVoice")
 engine = pyttsx3.init()

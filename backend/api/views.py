@@ -129,7 +129,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .assitent import call
 import win32com.client
 import openai
-apikey = "sk-proj-aRdiAbfCkXnSg9lxzRZAT3BlbkFJKxPcFnZw7KpFZjkMpMWB"
+apikey = ""
 openai.api_key = apikey
 sp = win32com.client.Dispatch("SAPI.SpVoice")
 

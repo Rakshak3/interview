@@ -4,16 +4,22 @@ import random
 import speech_recognition as sr
 import openai
 import pyttsx3
+from pyttsx3.drivers import sapi5
 import sys
-if sys.platform == 'win32':
-    import win32com.client
+# if sys.platform == 'win32':
+#     import win32com.client
+
 
 
 apikey = ""
 openai.api_key = apikey
-sp = win32com.client.Dispatch("SAPI.SpVoice")
-engine = pyttsx3.init()
-engine.say("Hello, I am your assistant")
+#  sp = win32com.client.Dispatch("SAPI.SpVoice")
+# engine = pyttsx3.init()
+engine = pyttsx3.init(driverName="sapi5")
+# Set properties (optional)
+engine.setProperty('rate', 150)  # Speed of speech (words per minute)
+engine.setProperty('volume', 0.9)  # Volume level (0.0 to 1.0)
+
 
 
 chatStr = ""
@@ -102,7 +108,9 @@ def call():
   def say(text):
     try:
         print(text)
-        sp.Speak(text)
+        engine.say(text)
+        engine.runAndWait()
+        # sp.Speak(text)
         
     except Exception as e:
         print("Error occurred while speaking:", e)
@@ -136,6 +144,9 @@ def call():
   print("Listeing....")
   query = takeCommand()
   say("ok.. thank you...")
+
+if __name__== '__main__':
+    call()
 
 
 #   say("ok.. give me defination of Object oriented porgraming...")

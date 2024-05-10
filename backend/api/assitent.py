@@ -2,9 +2,12 @@ import os
 import random
 
 import speech_recognition as sr
-import win32com.client
 import openai
 import pyttsx3
+import sys
+if sys.platform == 'win32':
+    import win32com.client
+
 
 apikey = ""
 openai.api_key = apikey

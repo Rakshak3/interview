@@ -17,6 +17,15 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
+    # Specify the port
+    port = os.environ.get("PORT", 8000)
+    
+    # Update sys.argv to include the port
+    sys.argv.append('--port=' + str(port))
+
+    execute_from_command_line(sys.argv)
+
 
 if __name__ == '__main__':
     main()
+    

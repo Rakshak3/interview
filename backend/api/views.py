@@ -126,7 +126,7 @@ class UploadVideoView(APIView):
 
 # interviews/views.py
 from django.views.decorators.csrf import csrf_exempt
-from .assitent import call
+# from .assitent import call
 import win32com.client
 import openai
 apikey = ""
